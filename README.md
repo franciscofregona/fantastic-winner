@@ -1,15 +1,14 @@
-#Descripción general
+# Descripción general
 
-Vas a implementar un DolarHoy.com.
+Vas a implementar una web similar a DolarHoy.com.
 Yo tengo que abrir un navegador, apuntarlo a una web y ahí dentro va a estar la cotización del dólar.
 
-No paniquees. Es MUCHO mas simple de lo que parece.
 1. Vamos a hacer una cotización inventada (con un random)
 2. La web va a estar corriendo en un contenedor en la pc. No vamos a usar nada de trafico vía internet.
 3. Vamos a implementarlo en capas. Acá estoy inventando fuerte, la realidad es parecida pero no igual a esto.
 
 
-
+```
     Cliente
        |
        v
@@ -24,7 +23,7 @@ Base de datos (5432)
        |
        |
 Servicio de precios
-
+```
 
 
 El cliente soy yo, que tengo que apuntar mi navegador a http://localhost:8000 y ver una web con un numero dentro. Listo.
@@ -41,14 +40,14 @@ El primer commit que hagas va a ser este documento guardado como "README.md", ad
 
 
 
-Base de datos:
+## Base de datos:
 Contenedor de postgres.
 Adentro va a tener una tabla que se llama "cotizacion", con 2 columnas: "fecha" y "cotizacion".
 Esta tabla la va a crear el servicio de precios.
 Está disponible en el puerto 5432.
 
 
-Servicio de precios:
+## Servicio de precios:
 Para este contenedor tenes que
 1. Escribir unas pocas lineas de python
 2. importar alguna libreria de python que te permita escribir en una base de datos.
@@ -57,16 +56,17 @@ Para este contenedor tenes que
 5. Repetir una vez por minuto.
 6. Al inicio, lo primero que va a hacer es revisar si la tabla de cotización existe. Y sino, crearla.
 
-Web:
+## Web:
 Este contenedor es un servidor web. Lo vamos a hacer absurdamente sencillo. Va a ser de "Flask" (google!) que es un tipo de servidor web que se configura usando Python.
 Va a importar la misma librería para consultar la base de datos postgres y se va a traer la ultima cotización disponible y la va a mostrar en la web. Cuando aprieto F5, se trae la próxima. Sencillito.
 
-Notas y lecturas. Planea que vas a leer una semana de corrido.
+## Notas y lecturas
+Planea que vas a leer una semana de corrido.
 Cuando instales Docker, tenes que configurarlo para usarlo sin ser root.
 
 En Github vas a poner solo código. Yo tengo que poder bajarme el código y ejecutar lo que digas en el Readme y llegar al mismo resultado que vos.
 
-https://docs.docker.com/
-https://flask.palletsprojects.com/en/2.2.x/
-https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-create-table/
-https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/
+* https://docs.docker.com/
+* https://flask.palletsprojects.com/en/2.2.x/
+* https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-create-table/
+* https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/
